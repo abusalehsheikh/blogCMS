@@ -40,7 +40,6 @@
                     <div class="row my-4">
                         <div class="form-group col-md-4">
                             <label for="published_at">Published at</label>
-{{--                            <input type="text" id="published_at" name="published_at" value="{{ isset($post) ? $post->published_at : '' }}" class="form-control col-md-2">--}}
                             <input class="form-control" id="published_at" type="text" placeholder="Select Date" name="published_at" value="{{ isset($post) ? $post->published_at : '' }}">
                         </div>
                         <div class="form-group col-md-4">

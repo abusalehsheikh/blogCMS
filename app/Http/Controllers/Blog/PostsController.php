@@ -16,16 +16,10 @@ class PostsController extends Controller
 
     public function category(Category $category)
     {
-        $search = request()->query('search');
 
-        if ($search){
-            $posts = $category->posts()->where('title', 'LIKE', "%{$search}%")->simplePaginate(1);
-        }else{
-            $posts = $category->posts()->simplePaginate(1);
-        }
         return view('blog.category',[
             'category'      => $category,
-            'posts'         => $posts,
+            'posts'         => $category->posts()->searched()->simplePaginate(4),
             'categories'    => Category::all(),
             'tags'          => Tag::all()
         ]);
@@ -35,7 +29,7 @@ class PostsController extends Controller
     {
         return view('blog.tag',[
             'tag'           => $tag,
-            'posts'         => $tag->posts()->simplePaginate(4),
+            'posts'         => $tag->posts()->searched()->simplePaginate(4),
             'categories'    => Category::all(),
             'tags'          =>Tag::all()
         ]);

@@ -50,7 +50,7 @@
 
                             @empty
                                 <h3 class="text-center">
-                                    No result found for <strong>{{ request()->query('search') }}</strong>
+                                    No result found for query <strong>{{ request()->query('search') }}</strong>
                                 </h3>
                             @endforelse
 

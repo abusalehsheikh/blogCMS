@@ -369,10 +369,13 @@
     </div>
 </footer><!-- /.footer -->
 
-
 <!-- Scripts -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d0ea0d6b1e1c987"></script>
 <script src="{{ asset('js/page.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+
+
+
 
 </body>
 </html>

@@ -2,8 +2,7 @@
 
 @section('title')
     {{ $post->title }}
-
-    @endsection
+@endsection
 
 @section('header')
 <!-- Header -->

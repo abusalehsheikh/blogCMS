@@ -34,7 +34,10 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create')->with('categories', Category::all())->with('tags', Tag::all());
+        return view('posts.create',[
+            'categories'    => Category::all(),
+            'tags'          => Tag::all()
+        ]);
     }
 
     /**
@@ -86,7 +89,12 @@ class PostsController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.create')->with('post',$post)->with('categories', Category::all())->with('tags', Tag::all());
+
+        return view('posts.create',[
+            'post'          => $post,
+            'categories'    => Category::all(),
+            'tags'          => Tag::all()
+        ]);
     }
 
     /**
@@ -98,18 +106,22 @@ class PostsController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        $data = $request->only(['title','description','content','published_at','category_id']);
+        $data = $request->only(['title','description','content','published_at',]);
 
         if ($request->hasFile('image')){
             $image =  $request->image->store('posts');
             Storage::delete($post->image);
-
             $data['image'] = $image;
         }
 
         if ($request->tags){
             $post->tags()->sync($request->tags);
         }
+
+        if ($request->category){
+            $post->update( ['category_id' => $request->category]);
+        }
+
 
         $post->update($data);
 

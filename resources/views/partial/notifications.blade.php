@@ -10,6 +10,7 @@
     @if(Session::has('success'))
 
     toastr.options = {
+
         "showMethod": "slideDown",
         "hideMethod": "slideUp"
     }
@@ -27,6 +28,7 @@
     @if(Session::has('info'))
 
     toastr.options = {
+
         "showMethod": "slideDown",
         "hideMethod": "slideUp"
     }

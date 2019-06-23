@@ -22,6 +22,7 @@
                             <tr>
                                 <th scope="col">Image</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">Role</th>
                                 <th scope="col">Email</th>
                                 <th scope="col" class="text-center">Action</th>
                             </tr>
@@ -33,6 +34,7 @@
                                         <img src="{{ Gravatar::src($user->email, 50) }}" class="rounded-circle">
                                     </td>
                                     <td>{{$user->name}}</td>
+                                    <td>{{$user->role}}</td>
                                     <td>{{ $user->email }}</td>
                                     <td class="text-center">
 

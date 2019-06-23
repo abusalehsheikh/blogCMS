@@ -30,7 +30,12 @@
                                 <td class="text-center">{{$category->posts->count()}}</td>
                                 <td class="text-center">
                                     <a href="{{ route('categories.edit',$category->id) }}" class="btn btn-info btn-sm">Edit</a>
-                                    <button class="btn btn-danger btn-sm" onclick="handleDelete({{ $category->id }})">	Delete</button>
+
+                                    <form action="{{route('categories.destroy',$category->id)}}" method="POST" class="d-inline-block">
+                                        @method('DELETE')
+                                        @csrf
+                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -44,59 +49,5 @@
 
         </div>
     </div>
-
-
-
-
-
-
-
-
-{{--    <!-- Modal -->--}}
-{{--    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
-{{--        <div class="modal-dialog modal-dialog-centered" role="document">--}}
-{{--            <div class="modal-content">--}}
-{{--                    <div class="modal-header">--}}
-{{--                        <h5 class="modal-title" id="exampleModalLongTitle">Delete Category</h5>--}}
-{{--                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                            <span aria-hidden="true">&times;</span>--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
-{{--                <div class="modal-body">--}}
-{{--                    <strong class="text-center">Are you sure you want to Delete this Category ?</strong>--}}
-{{--                </div>--}}
-{{--                    <div class="modal-footer">--}}
-
-{{--                        <form action="" method="POST" id="deleteCategoryForm">--}}
-
-{{--                            @method('DELETE')--}}
-{{--                            @csrf--}}
-
-{{--                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Go back</button>--}}
-{{--                            <button type="submit" class="btn btn-danger">Yes, Delete</button>--}}
-
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-    @endsection
-
-
-
-
-
-
-
-    @section('script')
-
-        <script>
-            function handleDelete(id) {
-                var form = document.getElementById('deleteCategoryForm')
-                form.action = '/categories/' + id
-                $('#deleteModal').modal('show')
-            }
-        </script>
 
     @endsection

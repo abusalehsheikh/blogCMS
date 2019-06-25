@@ -18,7 +18,7 @@
         <div class="tile">
             <div class="tile-body">
 
-                <form class="row" action="{{ isset($tag) ? route('tags.update', $tag->id) : route('categories.store')}}" method="POST">
+                <form class="row" action="{{ isset($tag) ? route('tags.update', $tag->id) : route('tags.store')}}" method="POST">
 
                     @csrf
                     @if(isset($tag))

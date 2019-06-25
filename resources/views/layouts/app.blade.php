@@ -20,19 +20,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 {{--    <!-- Font-icon css-->--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
-    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 
     <!-- Bootstrap & jQuery -->
-    <script src="{{ asset('js/jquery-3.4.0.min.js') }}"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 
     @yield('style')
 </head>
@@ -44,10 +40,6 @@
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
-        <li class="app-search">
-            <input class="app-search__input" type="search" placeholder="Search">
-            <button class="app-search__button"><i class="fa fa-search"></i></button>
-        </li>
 
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown"><i class="fa fa-user fa-lg"></i></a>
@@ -71,15 +63,12 @@
     </ul>
 </header>
 <aside class="app-sidebar">
-<div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{{ Gravatar::src(auth()->user()->email, 50) }}" alt="User Image">
-    <div>
-
-        <p class="app-sidebar__user-name">{{ auth()->user()->name }}</p>
-        <p class="app-sidebar__user-designation">{{ auth()->user()->role }}</p>
-
-
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{{ Gravatar::src(auth()->user()->email, 50) }}" alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name">{{ auth()->user()->name }}</p>
+            <p class="app-sidebar__user-designation">{{ auth()->user()->role }}</p>
+        </div>
     </div>
-</div>
 <ul class="app-menu">
 
     <li><a class="app-menu__item active" href="{{ route('home') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
@@ -109,12 +98,9 @@
     @if( auth()->user()->isAdmin())
         <li><a class="app-menu__item" href="{{ route('users.index') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Users</span></a></li>
     @endif
-
-
-
-
 </ul>
 </aside>
+
 <main class="app-content">
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <div class="app-title">
@@ -133,24 +119,18 @@
 
     @include('partial.notifications')
 
-    <!-- Scripts -->
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+{{--    <script src="{{ asset('js/app.js') }}"></script>--}}
 <!-- Javascripts-->
 
 <script src="{{ asset('js/main.js') }}"></script>
 
-<script src="{{ asset('js/pace.min.js') }}"></script>
-
-
-
+{{--<script src="{{ asset('js/pace.min.js') }}"></script>--}}
 
 
     @yield('script')

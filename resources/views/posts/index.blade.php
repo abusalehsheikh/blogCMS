@@ -14,7 +14,7 @@
 
     <div class="col-md-12">
         <div class="tile">
-            <h3 class="tile-title">Published Posts</h3>
+            <h3 class="tile-title">All Posts</h3>
             <div class="tile-body">
                 @if($posts->count() > 0)
                     <div class="table-responsive">

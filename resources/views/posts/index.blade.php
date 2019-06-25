@@ -65,7 +65,7 @@
                         </table>
                     </div>
                 @else
-                    <h3 class="text-center">No Posts Yet !</h3>
+                    <h3 class="text-center">Empty</h3>
                 @endif
             </div>
         </div>

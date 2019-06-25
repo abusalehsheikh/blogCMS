@@ -147,10 +147,7 @@
 
 <script src="{{ asset('js/main.js') }}"></script>
 
-<script src="{{ asset('js/pace.min.js') }}"></script>
-
-
-
+{{--<script src="{{ asset('js/pace.min.js') }}"></script>--}}
 
 
     @yield('script')

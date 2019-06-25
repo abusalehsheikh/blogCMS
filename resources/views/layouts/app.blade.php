@@ -142,7 +142,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+{{--    <script src="{{ asset('js/app.js') }}"></script>--}}
 <!-- Javascripts-->
 
 <script src="{{ asset('js/main.js') }}"></script>
